@@ -19,12 +19,14 @@ A food ordering experience for a single restaurant. Hungry clients of this ficti
     - receive a notification when new orders are placed
     - provide pickup time
 
-### User Stories
+## User Stories
 !["user-stories"](https://github.com/yuzhakova/restaurant-takeout-app/blob/master/docs/2_user_stories.png)
+
 Customers and Restaurant requirements converted to app features
 
-### Entity Relationship Diagram
+## Entity Relationship Diagram
 !["entity-relationship-database"](https://github.com/yuzhakova/restaurant-takeout-app/blob/master/docs/3_entity_relationship_diagram.png)
+
 PSQL database tables design
 
 ## Final Product
@@ -56,6 +58,6 @@ PSQL database tables design
 7. Run the server: `npm run local` (note: nodemon is used, so you should not have to restart your server)
 8. Visit `http://localhost:8080/`
 
-# Authors
+## Authors
 - Gurcharan Dhaliwal
 - Natalia Yuzhakova
