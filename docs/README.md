@@ -59,5 +59,4 @@ PSQL database tables design
 8. Visit `http://localhost:8080/`
 
 ## Developers Team
-![Gurcharan Dhaliwal](https://github.com/GSDhaliwal)
-![Natalia Yuzhakova](https://github.com/yuzhakova)
+[Gurcharan Dhaliwal](https://github.com/GSDhaliwal) and [Natalia Yuzhakova](https://github.com/yuzhakova)
