@@ -19,11 +19,11 @@ A food ordering experience for a single restaurant. Hungry clients of this ficti
     - receive a notification when new orders are placed
     - provide pickup time
 
-### ERD
-!["entity-relationship-database"](https://github.com/yuzhakova/restaurant-takeout-app/blob/master/docs/entity_relationship_diagram.png)
+### User Stories
+!["user-stories"](https://github.com/yuzhakova/restaurant-takeout-app/blob/master/docs/2_user_stories.png)
 
-### User stories can be found here
-!["user-stories"](/docs)
+### ERD
+!["entity-relationship-database"](https://github.com/yuzhakova/restaurant-takeout-app/blob/master/docs/3_entity_relationship_diagram.png)
 
 ## Final Product
 `ADD TEXT HERE
