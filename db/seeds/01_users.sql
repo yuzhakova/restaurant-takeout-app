@@ -1,11 +1,7 @@
--- Users table seeds here (Example)
-
--- INSERT INTO users (name) VALUES ('Alice');
--- INSERT INTO users (name) VALUES ('Kira');
-
+-- Insert tables records
 /*
 NY notes:
-I will populate 4 TABLES here by inserting records for:
+populated 4 TABLES with:
 - users
 - menu_items
 - orders
@@ -13,14 +9,23 @@ I will populate 4 TABLES here by inserting records for:
 */
 
 INSERT INTO users (name, email, password, phone, role)
-  VALUES ('Natalia', 'natalia.yuzhakova@gmail.com', 'password', '+16048805245', 'customer');
+  VALUES ('Natalia', 'natalia.yuzhakova@gmail.com', 'password', '+16048805245', 'customer'),
+  ('Natalia', 'natalia@gmail.com', 'password', '+16048805245', 'customer'),
+  ('Natalia', 'yuzhakova@gmail.com', 'password', '+16048805245', 'customer');
 
-INSERT INTO orders (uder_id, order_time, wait_time, order_status, pickup_time, customer_notes)
-  VALUES ('10', '07/25/2020, 11:30 AM', 15, 'complete', '07/25/2020, 11:45 AM', 'extra dressing');
+INSERT INTO orders (user_id, order_time, wait_time, order_status, pickup_time, customer_notes)
+  VALUES ('1', '07/25/2020, 11:30 AM', 15, 'complete', '07/25/2020, 11:45 AM', 'extra dressing'),
+  ('2', '07/25/2020, 11:30 AM', 15, 'complete', '07/25/2020, 11:45 AM', 'extra dressing'),
+  ('3', '07/25/2020, 11:30 AM', 15, 'complete', '07/25/2020, 11:45 AM', 'extra dressing');
 
 INSERT INTO menu_items (name, thumbnail_url, price, description, category)
-  VALUES ('Roots Salad', url, 8.99, 'gardem salad mix with seasonal vegetables and balsamic venegraitte', 'appetizer');
+  VALUES ('Roots Salad', 'url', 8.99, 'garden salad mix with seasonal vegetables and balsamic venegraitte', 'appetizer'),
+          ('Roots Salad', 'url', 8.99, 'garden salad mix with seasonal vegetables and balsamic venegraitte', 'appetizer'),
+          ('Roots Salad', 'url', 8.99, 'garden salad mix with seasonal vegetables and balsamic venegraitte', 'appetizer');
+
 
 INSERT INTO ordered_items (order_id, menu_item_id, qty)
-  VALUES (10, 1, 2);
+  VALUES (1, 1, 2),
+          (2, 2, 2),
+          (3, 3, 2);
 
