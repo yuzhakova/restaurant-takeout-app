@@ -58,6 +58,6 @@ PSQL database tables design
 7. Run the server: `npm run local` (note: nodemon is used, so you should not have to restart your server)
 8. Visit `http://localhost:8080/`
 
-## Authors
-- Gurcharan Dhaliwal
-- Natalia Yuzhakova
+## Developers Team
+![Gurcharan Dhaliwal](https://github.com/GSDhaliwal)
+![Natalia Yuzhakova](https://github.com/yuzhakova)
