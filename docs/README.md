@@ -8,21 +8,24 @@ A food ordering experience for a single restaurant. Hungry clients of this ficti
 - Node, Express, EJS, PSQL on the server-side
 
 ## Our App Allows
-  ### Users to:
+  ### Customers to:
     - see the menu items online
     - make selection by adding dishes to their cart
     - review their order details and total
     - modify their order before submitting
     - place orders and see online confirmation
     - receive a notification when their order is ready
-  ### Restaurant Owner to:
+  ### Restaurant to:
     - receive a notification when new orders are placed
     - provide pickup time
 
 ### User Stories
+Customers and Restaurant requirements converted to app features
 !["user-stories"](https://github.com/yuzhakova/restaurant-takeout-app/blob/master/docs/2_user_stories.png)
 
-### ERD
+
+### Entity Relationship Diagram
+PSQL database tables design
 !["entity-relationship-database"](https://github.com/yuzhakova/restaurant-takeout-app/blob/master/docs/3_entity_relationship_diagram.png)
 
 ## Final Product
@@ -47,16 +50,11 @@ A food ordering experience for a single restaurant. Hungry clients of this ficti
 
 ## Getting Started
 1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
-2. Update the .env file with your correct local information 
-  - username: `labber` 
-  - password: `labber` 
-  - database: `midterm`
+2. Update the .env file with your correct local information  (username: `labber`; password: `labber`; database: `midterm`)
 3. Install dependencies: `npm i`
 4. Fix to binaries for sass: `npm rebuild node-sass`
-5. Reset database: `npm run db:reset`
-  - Check the db folder to see what gets created and seeded in the SDB
-7. Run the server: `npm run local`
-  - Note: nodemon is used, so you should not have to restart your server
+5. Reset database: `npm run db:reset` (check the db folder to see what gets created and seeded in the SDB)
+7. Run the server: `npm run local` (note: nodemon is used, so you should not have to restart your server)
 8. Visit `http://localhost:8080/`
 
 # Authors
