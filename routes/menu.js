@@ -17,7 +17,7 @@ module.exports = (db) => {
           console.log('FROM FUNCTION', res.rows)
           let templateVars = res.rows;
           console.log('#########', templateVars)
-          res.render('menu', templateVars)
+          res.redirect('menu', templateVars)
         })
         .catch(err => {
           res
