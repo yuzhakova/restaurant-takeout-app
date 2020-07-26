@@ -26,10 +26,10 @@ INSERT INTO menu_items (name, thumbnail_url, price, description, category)
           ('Zoodles & Spinach', 'https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/1-main-spinach-yo.jpg', 8.99, 'Zucchini noodles, spinach, radishes and avocado are starring in this masterpiece.', 'main'),
           ('Veggie Balls', 'https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/1-main-veggie-balls.jpg', 8.99, 'Veggie balls on a bed of leafy greens.', 'main'),
           ('Butternut Squash Soup', 'https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/2-soup-butternut-squash.jpg', 7.99, 'Butternut squash cream soup.', 'soup'),
-          ('Tom Yum', 'https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/2-soup-veg-tom-yum.jpg', 7.99, 'Vegan version of our favourite Thai soup.', 'soup');
-          -- ('Cheesecake', 'https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/3-dessert-cheesecake.jpg', 5.99, 'Best cheesecake in town, voted by our loyal customers.', 'dessert),
-          -- ('Fruit Plate', 'https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/3-dessert-fruit.jpg', 4.99, 'Can never go wrong with fresh fruit and berry seasonal selection.', 'dessert'),
-          -- ('Lemon Square', 'https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/3-dessert-lemon-square.jpg', 3.99, 'Zesty lemon bar handcrafted by our pastry chef.', 'dessert');
+          ('Tom Yum', 'https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/2-soup-veg-tom-yum.jpg', 7.99, 'Vegan version of our favourite Thai soup.', 'soup'),
+          ('Cheesecake', 'https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/3-dessert-cheesecake.jpg', 5.99, 'Best cheesecake in town, voted by our loyal customers.', 'dessert'),
+          ('Fruit Plate', 'https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/3-dessert-fruit.jpg', 4.99, 'Can never go wrong with fresh fruit and berry seasonal selection.', 'dessert'),
+          ('Lemon Square', 'https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/3-dessert-lemon-square.jpg', 3.99, 'Zesty lemon bar handcrafted by our pastry chef.', 'dessert');
 
 INSERT INTO ordered_items (order_id, menu_item_id, qty)
   VALUES (1, 1, 2),
