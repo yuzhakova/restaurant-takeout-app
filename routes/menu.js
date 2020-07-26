@@ -10,17 +10,24 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM menu_items;`)
-      .then(data => {
-        console.log(data.rows)
-        const users = data.rows;
-        res.json({ users });
+    let templateVars = getMenuItems(db);
+    console.log(templateVars)
+    res.render("menu");
+  });
+
+  const getMenuItems = function (database) {
+    database.query(`SELECT * FROM menu_items;`)
+      .then(results => {
+        console.log(hi)
+        const menuItems = results.rows;
+        res.json( { menuItems } );
       })
       .catch(err => {
         res
           .status(500)
           .json({ error: err.message });
-      });
-  });
+      })
+  }
+
   return router;
 };
