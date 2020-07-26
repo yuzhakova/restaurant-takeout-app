@@ -1,4 +1,4 @@
-#Developers Team to review the Photos and choose what will be used for the website
+# Developers Team to review the Photos and choose what will be used for the website
 
 !["cover_page_1"](https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/_coverpage_1.jpg)
 
