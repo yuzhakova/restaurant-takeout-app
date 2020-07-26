@@ -45,7 +45,7 @@ app.use("/confirmation", confirmationRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 
-// Home page
+// aHome page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
