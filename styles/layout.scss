@@ -1,9 +1,19 @@
 // See: https://sass-lang.com/
 
 body {
-  background-color: #EEE;
 
   h1 {
-    color: #244751;
+    color: #cc3300;
   }
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #cc3300;
+  text-align: center;
+  font-size: medium;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
