@@ -12,8 +12,16 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  color: #cc3300;
-  text-align: center;
-  font-size: medium;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.page-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  // text-align: center;
+}
+
+.social {
+margin-bottom: 1em;
 }

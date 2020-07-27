@@ -1,12 +1,19 @@
-.navigation {
+.navbar {
   height: 70px;
   width: 100%;
+  background-color: rgba(0,0,0,0.2);
   color: #ffffff;
   position: fixed;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .nav-logo {
+object-position: center;
+color: #ffff00;
+font-weight: 600;
+  }
 
   .nav-elements {
     display: flex;
@@ -42,4 +49,22 @@
     margin: 4vh 2vw;
     padding: 10px;
   }
+}
+
+.nav-social {
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.nav-social {
+  font-size: 3vw;
+  padding: 10px;
+}
+
+.nav-link {
+  font-size: 3vw;
+  font-weight: 600;
+  margin-left: 10px;
 }

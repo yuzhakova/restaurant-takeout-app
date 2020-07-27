@@ -1,11 +1,26 @@
 .menu {
-  margin-top: 0;
   background-image: url('../images/_coverpage_2.jpg');
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
   background-attachment: fixed;
-}
+  margin-bottom: 0;
+  padding-top: 0;
 
+  border-top: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  -webkit-margin-before: 1.33em;
+  margin-top: 0;
+margin-bottom: 0;
+margin-left: auto;
+margin-right: auto;
+
+
+}
+.container-full {
+    width:100%;
+}
 .menu-item {
   display: flex;
   justify-content: space-evenly;
