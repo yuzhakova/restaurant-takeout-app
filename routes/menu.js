@@ -17,7 +17,6 @@ module.exports = (db) => {
       db.query(`SELECT * FROM menu_items;`)
         .then(data => {
           let templateVars = data.rows;
-          console.log(templateVars)
           res.json( { templateVars})
           //res.render('menu', templateVars)
         })
