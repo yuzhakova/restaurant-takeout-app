@@ -27,7 +27,7 @@ $(() => {
           $('#menu_item_soups').append($menuItem);
         } else if (menuItems[item].category === 'dessert') {
           const $menuItem = createMenuItemElement(menuItems[item]);
-          $('#menu_item_dessert').append($menuItem);
+          $('#menu_item_desserts').append($menuItem);
         }
       }
     });;
