@@ -26,18 +26,6 @@ module.exports = (db) => {
             .status(500)
             .json({ error: err.message });
         });
-    /*templateVars
-      .then( res => {
-        console.log('NOT FROM FUNCTION', templateVars)
-        res.render('menu')
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      })
-  }
-        res.send(err)
-      })*/
 
     })
 
