@@ -6,7 +6,8 @@ $(() => {
       `<img  class="user" src="${item.thumbnail_url}">
        <p class="item-name">${item.name}</p>
        <p class="item-description">${item.description}</p>
-       <p class="item-price">>${item.price}</p>
+       <p class="item-price">${item.price}</p>
+       <button>Add to Cart</button>
         `;
 
     return $(stringifiedItems);
