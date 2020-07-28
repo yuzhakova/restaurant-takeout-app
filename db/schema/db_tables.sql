@@ -29,11 +29,11 @@ DROP TABLE IF EXISTS orders CASCADE;
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-order_time VARCHAR(255) NOT NULL, -- NOW()
-wait_time INTEGER, -- should we delete it?
-order_status TEXT NOT NULL,
-pickup_time  VARCHAR(255) NOT NULL, -- NOW()
-customer_notes TEXT NOT NULL
+  order_time VARCHAR(255) NOT NULL, -- NOW()
+  wait_time INTEGER, -- should we delete it?
+  order_status TEXT NOT NULL,
+  pickup_time  VARCHAR(255) NOT NULL, -- NOW()
+  customer_notes TEXT NOT NULL
 );
 
 DROP TABLE IF EXISTS menu_items CASCADE;
