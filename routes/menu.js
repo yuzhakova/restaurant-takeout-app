@@ -1,3 +1,4 @@
+
 /*
  * All routes for Users are defined here
  * Since this file is loaded in server.js into api/users,
@@ -31,3 +32,4 @@ module.exports = (db) => {
 
   return router;
 };
+

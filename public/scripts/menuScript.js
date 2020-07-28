@@ -1,5 +1,3 @@
-
-
 function incNumber(item_id) {
   let myDisplay = $(`.display[data-product-id='${item_id}']`);
   let oldNumber = myDisplay.text();
