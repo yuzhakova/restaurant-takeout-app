@@ -10,40 +10,15 @@ $(() => {
               <p class="item-name">${item.name}</p>
               <p class="item-description">${item.description}</p>
               <p class="item-price">$ ${(item.price / 100)}</p>
+            </div>
+            <div id="all-buttons">
+              <div id="quantity-section">
+                <button data-quantity-decrease-id="${item.id}"class="quantity-controller">-</button>
+                <label id="display${item.id}">0</label>
+                <button data-quantity-increase-id="${item.id}"class="quantity-controller">+</button>
               </div>
-
-              <body>
-              <input type="button" value="+" id="inc" onclick="incNumber()"/>
-              <input type="button" value="-" id="dec" onclick="decNumber()"/>
-
-              <label id="display">0</label>
-
-              <script type="text/javascript">
-
-              let i = 0;
-
-              function incNumber() {
-                  if (i < 10) {
-                      i++;
-                  } else if (i = 10) {
-                      i = 0;
-                  }
-                  document.getElementById("display").innerHTML = i;
-              }
-
-              function decNumber() {
-                  if (i > 0) {
-                      --i;
-                  } else if (i = 0) {
-                      i = 10;
-                  }
-                  document.getElementById("display").innerHTML = i;
-              }
-              </script>
-          </body>
-
-
-              <button data-product-id="${item.id}" class="add-to-cart" type="button" class="btn btn-success">Add To Cart></button>
+              <button data-product-id="${item.id}" class="add-to-cart" type="button">Add To Cart</button>
+            </div>
             </div>
        </div>
         `;
@@ -51,6 +26,7 @@ $(() => {
     return $(stringifiedItems);
   };
 
+  let counter = 0;
 
   $.ajax({
     method: "GET",
@@ -72,6 +48,13 @@ $(() => {
         }
       }
 
+
+      $('.quantity-controller').click(function(event) {
+        if ($(this).data('quantity-increase-id')) {
+          //$(#display)
+        }
+
+      })
 
       $(".add-to-cart").click(function(event) {
         const menuId = $(this).data("product-id")
