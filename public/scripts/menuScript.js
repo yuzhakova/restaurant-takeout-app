@@ -41,17 +41,24 @@ $(() => {
           $('#menu_item_desserts').append($menuItem);
         }
       }
+
+
       $(".add-to-cart").click(function(event) {
-        console.log($(this).data("product-id"))
+        const menuId = $(this).data("product-id")
+        const itemName = menuItems[menuId - 1].name;
+        const itemPrice = ((menuItems[menuId - 1].price) / 100);
         event.preventDefault();
 
           $.ajax({
-            url: '/checkout/',
-            method: 'POST'
+            method: 'POST',
+            url: '/checkout',
+            data: { name: itemName, price: itemPrice }
+          })
+          .done(res => {
+            console.log(res.selectedMenuItem)
           })
 
         });
-      console.log("rendered add-to-cart buttons")
     });
 
 
