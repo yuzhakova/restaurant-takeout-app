@@ -28,6 +28,7 @@ $(() => {
     url: "/menu/1"
   })
     .done(res => {
+      console.log(res.templateVars)
       let menuItems = res.templateVars;
       for (let item = 0; item < menuItems.length; item++) {
         if (menuItems[item].category === 'main') {
@@ -45,6 +46,7 @@ $(() => {
 
       $(".add-to-cart").click(function(event) {
         const menuId = $(this).data("product-id")
+        const itemId = menuItems[menuId - 1].id;
         const itemName = menuItems[menuId - 1].name;
         const itemPrice = ((menuItems[menuId - 1].price) / 100);
         event.preventDefault();
@@ -52,10 +54,7 @@ $(() => {
           $.ajax({
             method: 'POST',
             url: '/checkout',
-            data: { name: itemName, price: itemPrice }
-          })
-          .done(res => {
-            console.log(res.selectedMenuItem)
+            data: { id: itemId, name: itemName, price: itemPrice }
           })
 
         });

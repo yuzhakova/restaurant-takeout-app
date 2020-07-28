@@ -7,8 +7,10 @@ module.exports = () => {
   router.post("/", (req, res) => {
     let selectedMenuItem = req.body;
     console.log('item added', selectedMenuItem)
-    menuItems.name = selectedMenuItem.name;
-    menuItems.price = selectedMenuItem.price;
+    const id = selectedMenuItem.id;
+    menuItems[id] = {};
+    menuItems[id].name = selectedMenuItem.name;
+    menuItems[id].price = selectedMenuItem.price;
     res.end();
   })
 
