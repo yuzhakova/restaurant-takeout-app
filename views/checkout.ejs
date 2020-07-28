@@ -13,22 +13,19 @@
   </head>
 
   <body>
-<<<<<<< HEAD
 
-    <h1>Order Page</h1>
+    <!-- <h1>Order Page</h1> -->
   </body>
-=======
     <%- include('partials/_header') %>
     <div class="container">
     <article class="card">
-        <header class="card-header"> FEED-ly family is thanking you for choosing us today!</header>
+        <header class="card-header"> <strong> FEED-ly family is thanking you for choosing us today!</strong></header>
         <div class="card-body">
-            <h6>Order ID: OD45345345435</h6>
             <article class="card">
                 <div class="card-body row">
                     <div class="col"> <strong>Order now to have it ready by:</strong> <br>3:45PM July 31, 2020 </div>
                     <div class="col"> <strong>Pick up:</strong> <br>FEED-ly @777 Cardero St. | <i class="fa fa-phone"></i> +16048805245 </div>
-                    <div class="col"> <strong>Status:</strong> <br> Pending </div>
+                    <div class="col"> <strong>Status:</strong> <br> Not Placed </div>
                 </div>
             </article>
             <hr>
@@ -64,15 +61,21 @@
                             <a class="btn btn-warning remove-item">-</a>
                             <a class="item-qty">1</a>
                           </figcaption>
-                    </figure>
-                </li>
-            </ul>
-            <hr>
+                        </figure>
+                      </li>
+                    </ul>
+                                    <div class="form-group">
+                                      <label for="customerNotes">Customer Notes:</label>
+                                      <textarea name="specialInstructions" class="form-control"></textarea>
+                            </div>
+                            <input type="hidden" name="orderDetails" class="form-order-details" value='{}'></input>
+                    <hr>
             <a href="/menu"class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to Menu</a>
-            <a href="/confirmation"class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-right"></i> Confirm and Pay</a>
+            <a href="/confirmation"class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-right"></i> Place Order</a>
         </div>
+
     </article>
     </div>
+
 </body>
->>>>>>> a5a465c72216d3600ab3933878e8f0be378bda85
 </html>
