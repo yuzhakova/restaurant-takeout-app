@@ -20,10 +20,16 @@ margin-right: auto;
   height: 200px;
 }
 
+
+
 .menu_display {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+
+}
+
+.menu-info-and-button {
+  display: flex;
 }
 
 .menu_info {
@@ -31,15 +37,28 @@ margin-right: auto;
   flex-direction: column;
 }
 
-.menu-info-and-button {
+#all-buttons {
   display: flex;
-  align-content: space-between;
+  flex-direction: column;
+
+}
+
+#add {
+  display: inline-block;
+  padding: 10px;
+}
+
+#subtract {
+  display: inline-block;
+  padding: 10px;
 }
 
 .add-to-cart {
-  width: 80;
-  height: 50;
+  width: 90px;
+  height: 50px;
 }
+
+
 
 }
 .container-full {
