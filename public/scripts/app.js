@@ -10,9 +10,12 @@ $(() => {
               <p class="item-name">${item.name}</p>
               <p class="item-description">${item.description}</p>
               <p class="item-price">$ ${(item.price / 100)}</p>
+              </div>
+              <a class="btn btn-warning add-item">+</a>
+              <a class="btn btn-warning remove-item">-</a>
+              <h5 class="item-qty">0</h5>
+              <button data-product-id="${item.id}" class="add-to-cart" type="button" class="btn btn-success">Add To Cart></button>
             </div>
-            <button data-product-id="${item.id}" class="add-to-cart" type="button" class="btn btn-success">Add To Cart</button>
-          </div>
        </div>
         `;
 
