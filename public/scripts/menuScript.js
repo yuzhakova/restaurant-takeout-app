@@ -1,5 +1,4 @@
 
-
 function incNumber(item_id) {
   let myDisplay = $(`.display[data-product-id='${item_id}']`);
   let oldNumber = myDisplay.text();
@@ -35,23 +34,12 @@ $(() => {
               <p class="item-description">${item.description}</p>
               <p class="item-price">$ ${(item.price / 100)}</p>
             </div>
-<<<<<<< HEAD
-            <div id="all-buttons">
-              <div id="quantity-section">
-                <button data-quantity-decrease-id="${item.id}"class="quantity-controller">-</button>
-                <label id="display${item.id}">0</label>
-                <button data-quantity-increase-id="${item.id}"class="quantity-controller">+</button>
-              </div>
-              <button data-product-id="${item.id}" class="add-to-cart" type="button">Add To Cart</button>
-            </div>
-=======
             <div class="menu_change">
 
               <input type="button" value="+" class="inc" onclick="incNumber(${item.id})"/>
               <input type="button" value="-" class="dec" onclick="decNumber(${item.id})"/>
               <label class="display" data-product-id="${item.id}">0</label>
               <button data-product-id="${item.id}" class="add-to-cart" type="button" class="btn btn-success">Add To Cart></button>
->>>>>>> 1a0557f4b9b305d51f1247577b6254fcea4450cd
             </div>
           </div>
         </div>
@@ -60,7 +48,6 @@ $(() => {
     return $(stringifiedItems);
   };
 
-  let counter = 0;
 
   $.ajax({
     method: "GET",
@@ -83,20 +70,6 @@ $(() => {
       }
 
 
-<<<<<<< HEAD
-      $('.quantity-controller').click(function(event) {
-        if ($(this).data('quantity-increase-id')) {
-          //$(#display)
-        }
-
-      })
-
-      $(".add-to-cart").click(function(event) {
-        const menuId = $(this).data("product-id")
-        const itemId = menuItems[menuId - 1].id;
-        const itemName = menuItems[menuId - 1].name;
-        const itemPrice = ((menuItems[menuId - 1].price) / 100);
-=======
       $(".add-to-cart").click(function (event) {
         const menuId = $(this).data("product-id");
         console.log("adding to cart", {menuId})
@@ -106,7 +79,6 @@ $(() => {
         // const itemName = menuItemObject.name;
         // const itemPrice = ((menuItemObject.price) / 100);
 
->>>>>>> 1a0557f4b9b305d51f1247577b6254fcea4450cd
         event.preventDefault();
 
         $.ajax({
@@ -128,6 +100,3 @@ $(() => {
 
 
 });
-
-
-
