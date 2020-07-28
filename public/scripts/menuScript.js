@@ -11,17 +11,37 @@ $(() => {
               <p class="item-description">${item.description}</p>
               <p class="item-price">$ ${(item.price / 100)}</p>
               </div>
-  <script language=javascript>
-function process(v){
-    var value = parseInt(document.getElementById('v').value);
-    value+=v;
-    document.getElementById('v').value = value;
-}
-</script>
 
-<input type=button value='-' onclick='javascript:process(-1)'>
-<input type=test size=10 id='v' name='v' value='0'>
-<input type=button value='+' onclick='javascript:process(1)'>
+              <body>
+              <input type="button" value="+" id="inc" onclick="incNumber()"/>
+              <input type="button" value="-" id="dec" onclick="decNumber()"/>
+
+              <label id="display">0</label>
+
+              <script type="text/javascript">
+
+              let i = 0;
+
+              function incNumber() {
+                  if (i < 10) {
+                      i++;
+                  } else if (i = 10) {
+                      i = 0;
+                  }
+                  document.getElementById("display").innerHTML = i;
+              }
+
+              function decNumber() {
+                  if (i > 0) {
+                      --i;
+                  } else if (i = 0) {
+                      i = 10;
+                  }
+                  document.getElementById("display").innerHTML = i;
+              }
+              </script>
+          </body>
+
 
               <button data-product-id="${item.id}" class="add-to-cart" type="button" class="btn btn-success">Add To Cart></button>
             </div>
