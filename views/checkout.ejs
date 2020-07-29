@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +8,7 @@
     <link rel="stylesheet" href="/styles/checkout.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+
 
 
   </head>
@@ -24,31 +24,20 @@
         <div class="card-body">
             <article class="card">
                 <div class="card-body row">
-                    <div class="col"> <strong>Order now to have it ready by:</strong> <br>3:45PM July 31, 2020 </div>
                     <div class="col"> <strong>Pick up:</strong> <br>FEED-ly @777 Cardero St. | <i class="fa fa-phone"></i> +16048805245 </div>
-                    <div class="col"> <strong>Status:</strong> <br> Not Placed </div>
+
                 </div>
             </article>
             <hr>
             <ul class="row">
-              <% for (let item in menuItems) { %>
-                <li class="col-md-4">
-                  <figure class="itemside mb-3">
-                    <div class="aside"><img src="<%= menuItems[item].image %>" class="img-sm border"></div>
-                    <figcaption class="info align-self-center">
-                      <p class="title"><%= menuItems[item].name %><br><%= menuItems[item].qty %></p> <span class="text-muted">$<%= menuItems[item].price / 100 %></span>
-                      <a class="btn btn-warning add-item">+</a>
-                      <a class="btn btn-warning remove-item">-</a>
-                      <a class="item-qty">1</a>
-                    </figcaption>
-                  </figure>
-                </li>
-              <% } %>
+              <section id="items_selected">
+
+              </section>
             </ul>
             <hr>
             <article class="card">
               <div class="card-body column">
-                  <div class="col">Subtotal: $30.96 Tax: $1.54<br><strong>Total:$32.60</strong> </div>
+                  <div class="col">Subtotal:to be determined<br><strong>Total:unknown</strong> </div>
               </div>
             </article>
             <hr>
@@ -64,6 +53,6 @@
 
     </article>
     </div>
-
+    <script type="text/javascript" src="/scripts/checkoutScript.js"></script>
 </body>
 </html>

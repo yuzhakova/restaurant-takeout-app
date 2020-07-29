@@ -44,10 +44,15 @@ module.exports = (db) => {
     // if no, just fill out some zeros or something, something nice and boring
     // if they do, get all the order_items and all the names and prices and quantities and shit
     // put it in template_vars or whatever, res.render('checking', template_vars) or whatever.
-    let items =  { menuItems };
-    console.log('menuItems', menuItems)
-    res.render("checkout", items);
+    //let items =  { menuItems };
+
+    res.render("checkout");
   });
+
+  router.get("/1", (req, res) => {        // JSON-only route for AJAX GET
+      res.json({ menuItems })
+
+  })
 
   return router;
 };

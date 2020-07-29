@@ -52,7 +52,6 @@ $(() => {
     url: "/menu/1"
   })
     .done(res => {
-      console.log(res.templateVars)
       let menuItems = res.templateVars;
       for (let item = 0; item < menuItems.length; item++) {
         if (menuItems[item].category === 'main') {
