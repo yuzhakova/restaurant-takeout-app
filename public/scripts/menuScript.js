@@ -2,9 +2,9 @@ function incNumber(item_id) {
   let myDisplay = $(`.display[data-product-id='${item_id}']`);
   let oldNumber = myDisplay.text();
   let newNumber = Number(oldNumber) + 1;
-  if (newNumber === 10) {
-    newNumber = Math.floor(Math.random() * 10) + 10;
-  }
+  //if (newNumber === 10) {
+    //newNumber = Math.floor(Math.random() * 10) + 10;
+  //}
   myDisplay.text(newNumber);
 }
 
@@ -70,9 +70,10 @@ $(() => {
 
       $(".add-to-cart").click(function (event) {
         const menuId = $(this).data("product-id");
-        console.log("adding to cart", {menuId})
 
         const menuItemObject = menuItems.find(item => item.id === menuId);
+        let qty = Number(($(`.display[data-product-id='${menuId}']`)).text());
+
         // const itemId = menuItemObject.id;
         // const itemName = menuItemObject.name;
         // const itemPrice = ((menuItemObject.price) / 100);
@@ -83,8 +84,9 @@ $(() => {
           method: 'POST',
           url: '/checkout',
           // data: { item_id: menuId, qty: 69 },     // TODO: set real quantity, d00d
-          data: { item_id: menuId, qty: 69, price: menuItemObject.price, name: menuItemObject.name },     // oh god my eyes, WHY NOT JUST TRUST THE HACKER.  GIVE THEM OUR BANK NUMBER.
-          // data: { id: itemId, name: itemName, price: itemPrice }
+          data: { item_id: menuId, qty: qty, price: menuItemObject.price, name: menuItemObject.name, image: menuItemObject.thumbnail_url }
+
+
         })
 
         // TODO: maybe you want to reset the number to zero?!?

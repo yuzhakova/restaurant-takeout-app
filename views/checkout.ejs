@@ -31,58 +31,33 @@
             </article>
             <hr>
             <ul class="row">
-              <%# for (let thing in things) { %>
-                <%# /* do each item */ %>
-              <%# } %>
-
-              <li class="col-md-4">
-                <figure class="itemside mb-3">
-                  <div class="aside"><img src="https://raw.githubusercontent.com/yuzhakova/restaurant-takeout-app/master/public/images/1-main-buddha-bowl.jpg" class="img-sm border"></div>
-                  <figcaption class="info align-self-center">
-                    <p class="title">Buddha Bowl <br> qty: 1</p> <span class="text-muted">$9.99</span>
-                    <a class="btn btn-warning add-item">+</a>
-                    <a class="btn btn-warning remove-item">-</a>
-                    <a class="item-qty">1</a>
-                  </figcaption>
-                </figure>
-              </li>
-
+              <% for (let item in menuItems) { %>
                 <li class="col-md-4">
-                    <figure class="itemside mb-3">
-                        <div class="aside"><img src="https://raw.githubusercontent.com/yuzhakova/restaurant-takeout-app/master/public/images/1-main-spinach-yo.jpg" class="img-sm border"></div>
-                        <figcaption class="info align-self-center">
-                            <p class="title">Zoodles & Spinach<br> qty: 1</p> <span class="text-muted">$8.99 </span>
-                            <a class="btn btn-warning add-item">+</a>
-                            <a class="btn btn-warning remove-item">-</a>
-                            <a class="item-qty">1</a>
-                          </figcaption>
-                    </figure>
+                  <figure class="itemside mb-3">
+                    <div class="aside"><img src="<%= menuItems[item].image %>" class="img-sm border"></div>
+                    <figcaption class="info align-self-center">
+                      <p class="title"><%= menuItems[item].name %><br><%= menuItems[item].qty %></p> <span class="text-muted">$<%= menuItems[item].price / 100 %></span>
+                      <a class="btn btn-warning add-item">+</a>
+                      <a class="btn btn-warning remove-item">-</a>
+                      <a class="item-qty">1</a>
+                    </figcaption>
+                  </figure>
                 </li>
-                <li class="col-md-4">
-                    <figure class="itemside mb-3">
-                        <div class="aside"><img src="https://raw.githubusercontent.com/yuzhakova/restaurant-takeout-app/master/public/images/3-dessert-cheesecake.jpg" class="img-sm border"></div>
-                        <figcaption class="info align-self-center">
-                            <p class="title">Cheesecake <br> qty: 2</p> <span class="text-muted">$5.99 </span>
-                            <a class="btn btn-warning add-item">+</a>
-                            <a class="btn btn-warning remove-item">-</a>
-                            <a class="item-qty">1</a>
-                          </figcaption>
-                        </figure>
-                      </li>
-                    </ul>
-                    <hr>
-                    <article class="card">
-                      <div class="card-body column">
-                          <div class="col">Subtotal: $30.96 Tax: $1.54<br><strong>Total:$32.60</strong> </div>
-                      </div>
-                  </article>
-                  <hr>
-                      <div class="form-group">
-                        <label for="customerNotes">Customer Notes:</label>
-                        <textarea name="customerNotes" class="form-control"></textarea>
-                      </div>
-                            <input type="hidden" name="orderDetails" class="form-order-details" value='{}'></input>
-                    <hr>
+              <% } %>
+            </ul>
+            <hr>
+            <article class="card">
+              <div class="card-body column">
+                  <div class="col">Subtotal: $30.96 Tax: $1.54<br><strong>Total:$32.60</strong> </div>
+              </div>
+            </article>
+            <hr>
+              <div class="form-group">
+                <label for="customerNotes">Customer Notes:</label>
+                <textarea name="customerNotes" class="form-control"></textarea>
+              </div>
+            <input type="hidden" name="orderDetails" class="form-order-details" value='{}'></input>
+            <hr>
             <a href="/menu"class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to Menu</a>
             <a href="/confirmation"class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-right"></i> Place Order</a>
         </div>
