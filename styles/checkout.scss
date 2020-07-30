@@ -56,23 +56,27 @@ body {
 .img-sm {
   width: 120px;
   height: 100px;
-  padding: 7px
 }
 
-ul.row,
-ul.row-sm {
+ul.row {
   list-style: none;
   padding: 0
 }
 
+// .col-md-4 {
+//   width: 2000px;
+//   height: 100px;
+// }
+
 .itemside .info {
   padding-left: 15px;
-  padding-right: 7px
+  padding-right: 7px;
 }
 
 .itemside .title {
-  display: block;
   margin-bottom: 5px;
+  width: 120px;
+  height: 100px;
   color: #212529
 }
 
@@ -80,6 +84,7 @@ p {
   margin-top: 0;
   margin-bottom: 1rem
 }
+
 
 .btn-warning {
   color: #ffffff;
