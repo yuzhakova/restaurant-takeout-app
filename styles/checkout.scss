@@ -9,6 +9,7 @@ body {
 .container {
   margin-top: 100px;
   margin-bottom: 50px;
+
 }
 
 .card {
@@ -18,14 +19,16 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -ms-flex-direction: row;
+  flex-direction: row;
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.10rem
+  border-radius: 0.10rem;
+
+
 }
 
 .card-header:first-child {
@@ -58,15 +61,17 @@ body {
   height: 100px;
 }
 
-ul.row {
+.row {
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
-  padding: 0
-}
+  width: 100%;
+  flex-direction: row
+  // padding: 0;
+  // margin-right: -15px;
+  // margin-left: -15px;
 
-// .col-md-4 {
-//   width: 2000px;
-//   height: 100px;
-// }
+}
 
 .itemside .info {
   padding-left: 15px;
@@ -77,7 +82,8 @@ ul.row {
   margin-bottom: 5px;
   width: 120px;
   height: 100px;
-  color: #212529
+  color: #212529;
+
 }
 
 p {
@@ -85,7 +91,11 @@ p {
   margin-bottom: 1rem
 }
 
-
+// .col-md-4{
+//   display: flex;
+//   flex-direction: row;
+//   align-content: space-between;
+// }
 .btn-warning {
   color: #ffffff;
   background-color: #fb3;
