@@ -35,8 +35,8 @@ $(() => {
             <div class="menu_change">
 
               <input type="button" value="+" class="inc" onclick="incNumber(${item.id})"/>
-              <input type="button" value="-" class="dec" onclick="decNumber(${item.id})"/>
               <label class="display" data-product-id="${item.id}">0</label>
+              <input type="button" value="-" class="dec" onclick="decNumber(${item.id})"/>
               <button data-product-id="${item.id}" class="add-to-cart" type="button" class="btn btn-success">Add To Cart></button>
             </div>
           </div>
