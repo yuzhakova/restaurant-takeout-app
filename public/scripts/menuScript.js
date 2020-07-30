@@ -37,7 +37,7 @@ $(() => {
               <input type="button" value="+" class="inc" onclick="incNumber(${item.id})"/>
               <label class="display" data-product-id="${item.id}">0</label>
               <input type="button" value="-" class="dec" onclick="decNumber(${item.id})"/>
-              <button data-product-id="${item.id}" class="add-to-cart" type="button" class="btn btn-success">Add To Cart></button>
+              <button data-product-id="${item.id}" class="add-to-cart" type="button" class="btn btn-success">Add To Cart</button>
             </div>
           </div>
         </div>
@@ -51,39 +51,31 @@ $(() => {
     method: "GET",
     url: "/menu/1"
   })
-    .done(res => {
-      let menuItems = res.templateVars;
-      for (let item = 0; item < menuItems.length; item++) {
-        if (menuItems[item].category === 'main') {
-          const $menuItem = createMenuItemElement(menuItems[item]);
-          $('#menu_item_mains').append($menuItem);
-        } else if (menuItems[item].category === 'soup') {
-          const $menuItem = createMenuItemElement(menuItems[item]);
-          $('#menu_item_soups').append($menuItem);
-        } else if (menuItems[item].category === 'dessert') {
-          const $menuItem = createMenuItemElement(menuItems[item]);
-          $('#menu_item_desserts').append($menuItem);
-        }
+  .done(res => {
+    let menuItems = res.templateVars;
+    for (let item = 0; item < menuItems.length; item++) {
+      if (menuItems[item].category === 'main') {
+        const $menuItem = createMenuItemElement(menuItems[item]);
+        $('#menu_item_mains').append($menuItem);
+      } else if (menuItems[item].category === 'soup') {
+        const $menuItem = createMenuItemElement(menuItems[item]);
+        $('#menu_item_soups').append($menuItem);
+      } else if (menuItems[item].category === 'dessert') {
+        const $menuItem = createMenuItemElement(menuItems[item]);
+        $('#menu_item_desserts').append($menuItem);
       }
+    }
+    $(".add-to-cart").click(function (event) {
+      const menuId = $(this).data("product-id");
+      const menuItemObject = menuItems.find(item => item.id === menuId);
+      let qty = Number(($(`.display[data-product-id='${menuId}']`)).text());
+      event.preventDefault();
+      $.ajax({
+        method: 'POST',
+        url: '/checkout',
+        data: { item_id: menuId, qty: qty, price: menuItemObject.price, name: menuItemObject.name, image:menuItemObject.thumbnail_url }
+      })
 
-
-      $(".add-to-cart").click(function (event) {
-        const menuId = $(this).data("product-id");
-
-        const menuItemObject = menuItems.find(item => item.id === menuId);
-        let qty = Number(($(`.display[data-product-id='${menuId}']`)).text());
-
-        event.preventDefault();
-
-        $.ajax({
-          method: 'POST',
-          url: '/checkout',
-          data: { item_id: menuId, qty: qty, price: menuItemObject.price, name: menuItemObject.name, image: menuItemObject.thumbnail_url }
-        })
-      });
-
+    });
   });
-
-
-
 });

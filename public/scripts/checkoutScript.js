@@ -11,7 +11,7 @@ function incNumber(item_name) {
   itemInfo[item_name].qty = newNumber;
   subTotalPrice += (Number(itemInfo[item_name].price));
 
-  $("#subtotalprice").text(`$${subTotalPrice / 100}`);
+  $("#subtotalprice").text(`$${(subTotalPrice / 100).toFixed(2)}`);
   $("#totalprice").text(`$${((Math.round(subTotalPrice * 1.12)) / 100).toFixed(2)}`);
 }
 
@@ -29,7 +29,7 @@ function decNumber(item_name) {
   if (itemInfo[item_name].qty > -1) {
     subTotalPrice -= (Number(itemInfo[item_name].price));
   }
-  $("#subtotalprice").text(`$${subTotalPrice / 100}`);
+  $("#subtotalprice").text(`$${(subTotalPrice / 100).toFixed(2)}`);
   $("#totalprice").text(`$${((Math.round(subTotalPrice * 1.12)) / 100).toFixed(2)}`);
 }
 
@@ -98,7 +98,7 @@ $(() => {
       for (let item in itemInfo) {
         subTotalPrice += (itemInfo[item].price * itemInfo[item].qty);
       }
-      $("#subtotalprice").text(`$${subTotalPrice / 100}`);
+      $("#subtotalprice").text(`$${(subTotalPrice / 100).toFixed(2)}`);
       $("#totalprice").text(`$${((Math.round(subTotalPrice * 1.12)) / 100).toFixed(2)}`);
       }
   );
