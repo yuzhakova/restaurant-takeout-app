@@ -2,75 +2,66 @@
 <html lang="en">
   <head>
     <title>Shopping Bag</title>
-
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/checkout.css" type="text/css" />
-
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-
-
-
   </head>
 
   <body>
-
     <!-- <h1>Order Page</h1> -->
-  </body>
     <%- include('partials/_header') %>
+
     <div class="container">
-    <article class="card">
+      <article class="card">
         <header class="card-header"> <strong> FEED-ly family is thanking you for choosing us today!</strong></header>
         <div class="card-body">
-            <article class="card">
-                <div class="card-body row">
-                    <div class="col"> <strong>Pick up:</strong> <br>FEED-ly @777 Cardero St. | <i class="fa fa-phone"></i> +16048805245 </div>
-
-                </div>
-            </article>
-            <hr>
-            <ul class="row">
-              <section id="items_selected">
-
-              </section>
-            </ul>
-            <hr>
-            <form action="##" method="##"></form>
-            <article class="card">
-              <div class="card-body column">
-                <div  class="col">
-                  <p>Subtotal:</p>
-                  <p id="subtotalprice"></p>
-                  <p><strong>Total:</strong></p>
-                  <p id="totalprice"></p>
-                </div>
+          <article class="card">
+            <div class="card-body row">
+              <div class="col"> <strong>Pick up:</strong> <br>FEED-ly @777 Cardero St. | <i class="fa fa-phone"></i> +16048805245 </div>
+            </div>
+          </article>
+          <hr>
+          <ul class="row">
+            <section id="items_selected">
+            </section>
+          </ul>
+          <hr>
+          <form action="##" method="##"></form>
+          <article class="card">
+            <div class="card-body column">
+              <div  class="col">
+                <p>Subtotal:</p>
+                <p id="subtotalprice"></p>
+                <p><strong>Total:</strong></p>
+                <p id="totalprice"></p>
               </div>
-            </article>
-            <hr>
-              <div>
-
-                  <div class="form-group mb-2">
-                    <label for="pickUpName">Order pick up name:</label>
-                    <input type="text" id="pickUpName" name="pickUpName" placeholder="name">
-                    <label for="email">Email:</label>
-                    <input class="form-control" type="email" name="email" placeholder="example@example.com" style="width: 200px; margin: 1em">
-                    <label for="phone">Phone:</label>
-                    <input type="tel" name="phone" id="phone" placeholder="987-654-3210" style="width: 200px; margin: 1em">
-                  </div>
-              </div>
-              <div class="form-group">
-                <label for="customerNotes">Customer Notes:</label>
-                <textarea name="customerNotes" class="form-control"></textarea>
-              </div>
-            </form>
-            <input type="hidden" name="orderDetails" class="form-order-details" value='{}'></input>
-            <hr>
-            <a href="/menu"class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to Menu</a>
-            <a href="/confirmation"class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-right"></i> Place Order</a>
+            </div>
+          </article>
+          <hr>
+          <div>
+            <div class="form-group mb-2">
+              <label for="pickUpName">Order pick up name:</label>
+              <input type="text" id="pickUpName" name="pickUpName" placeholder="name">
+              <label for="email">Email:</label>
+              <input class="form-control" type="email" name="email" placeholder="example@example.com" style="width: 200px; margin: 1em">
+              <label for="phone">Phone:</label>
+              <input type="tel" name="phone" id="phone" placeholder="987-654-3210" style="width: 200px; margin: 1em">
+            </div>
+          </div>
+          <form>
+            <div class="form-group">
+              <label for="customerNotes">Customer Notes:</label>
+              <textarea name="customerNotes" class="form-control"></textarea>
+            </div>
+          </form>
+          <input type="hidden" name="orderDetails" class="form-order-details" value='{}'></input>
+          <hr>
+          <a href="/menu"class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to Menu</a>
+          <a href="/confirmation"class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-right"></i> Place Order</a>
         </div>
-
-    </article>
+      </article>
     </div>
     <script type="text/javascript" src="/scripts/checkoutScript.js"></script>
-</body>
+  </body>
 </html>
