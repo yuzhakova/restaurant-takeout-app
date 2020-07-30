@@ -80,11 +80,6 @@ $(() => {
           url: '/checkout',
           data: { item_id: menuId, qty: qty, price: menuItemObject.price, name: menuItemObject.name, image: menuItemObject.thumbnail_url }
         })
-
-        // TODO: maybe you want to reset the number to zero?!?
-        // TODO: probably tell them that it added it?!?  maybe just a green animated check mark or something?
-
-
       });
 
   });
