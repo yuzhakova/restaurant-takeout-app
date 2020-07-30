@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/checkout.css" type="text/css" />
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
   <body>
@@ -18,35 +17,21 @@
         <div class="card-body">
           <article class="card">
             <div class="card-body column">
-              <div class="col"> <strong>Your order will be ready by: </strong>3:45PM July 31, 2020 </div>
+              <div class="col"> <strong>You will receive : </strong></div>
             </div>
           </article>
           <hr>
           <ul class="column">
+            <% for (let item in confirmedItems) { %>
             <li class="col-md-4">
               <figure class="itemside mb-3">
                 <div class="aside"><img src="https://raw.githubusercontent.com/yuzhakova/restaurant-takeout-app/master/public/images/1-main-buddha-bowl.jpg" class="img-sm border"></div>
                 <figcaption class="info align-self-center">
-                  <p class="title">Buddha Bowl <br> qty: 1 x </p> <span class="text-muted">$9.99</span>
+                  <p class="title"><%= item %><br> qty: <%= confirmedItems[item] %></p>
                 </figcaption>
               </figure>
             </li>
-            <li class="col-md-4">
-              <figure class="itemside mb-3">
-                <div class="aside"><img src="https://raw.githubusercontent.com/yuzhakova/restaurant-takeout-app/master/public/images/1-main-spinach-yo.jpg" class="img-sm border"></div>
-                <figcaption class="info align-self-center">
-                  <p class="title">Zoodles & Spinach<br> qty: 1 x </p> <span class="text-muted">$8.99 </span>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="col-md-4">
-              <figure class="itemside mb-3">
-                <div class="aside"><img src="https://raw.githubusercontent.com/yuzhakova/restaurant-takeout-app/master/public/images/3-dessert-cheesecake.jpg" class="img-sm border"></div>
-                <figcaption class="info align-self-center">
-                    <p class="title">Cheesecake <br> qty: 2 x </p> <span class="text-muted">$5.99 </span>
-                </figcaption>
-              </figure>
-            </li>
+            <% } %>
           </ul>
           <hr>
           <article class="card">

@@ -22,47 +22,29 @@
             </div>
           </article>
           <hr>
-          <ul class="row">
-            <section id="items_selected">
-            </section>
-          </ul>
-          <hr>
-          <form action="##" method="##"></form>
-          <article class="card">
-            <div class="card-body column">
-              <div  class="col">
-                <p>Subtotal:</p>
-                <p id="subtotalprice"></p>
-                <p><strong>Total:</strong></p>
-                <p id="totalprice"></p>
+            <ul class="row">
+              <section id="items_selected">
+              </section>
+              </ul>
+            <hr>
+            <article class="card">
+              <div class="card-body column">
+                <div  class="col">
+                  <p>Subtotal:</p>
+                  <p id="subtotalprice"></p>
+                  <p><strong>Total:</strong></p>
+                  <p id="totalprice"></p>
+                </div>
               </div>
-            </div>
-          </article>
-          <hr>
-          <!-- <div>
-            <div class="form-group mb-2">
-              <label for="pickUpName">Order pick up name:</label>
-              <input type="text" id="pickUpName" name="pickUpName" placeholder="name">
-              <label for="email">Email:</label>
-              <input class="form-control" type="email" name="email" placeholder="example@example.com" style="width: 200px; margin: 1em">
-              <label for="phone">Phone:</label>
-              <input type="tel" name="phone" id="phone" placeholder="987-654-3210" style="width: 200px; margin: 1em">
-            </div>
-          </div> -->
-
-
-          <form>
+            </article>
+            <hr>
+            <form>
             <div class="form-group mb-2">
               <label for="pickUpName">Order pick up name: </label>
               <input type="text" id="pickUpName" name="pickUpName" class="form-control" id="formGroupExampleInput" placeholder="name" style="width: 250px; margin: 1em">
-              <label for="email">Email: </label>
-              <input class="form-control" type="email" name="email" placeholder="example@example.com" style="width: 250px; margin: 1em">
               <label for="phone">Phone: </label>
               <input type="tel" name="phone" id="phone" class="form-control" id="formGroupExampleInput2" placeholder="987-654-3210" style="width: 250px; margin: 1em">
             </div>
-          </form>
-
-          <form>
             <div class="form-group">
               <label for="customerNotes">Customer Notes:</label>
               <textarea name="customerNotes" class="form-control"></textarea>
@@ -71,7 +53,7 @@
           <input type="hidden" name="orderDetails" class="form-order-details" value='{}'></input>
           <hr>
           <a href="/menu"class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to Menu</a>
-          <a href="/confirmation"class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-right"></i> Place Order</a>
+          <a href="/confirmation" class="btn btn-warning" id="place-order" data-abc="true"> <i class="fa fa-chevron-right"></i> Place Order</a>
         </div>
       </article>
     </div>

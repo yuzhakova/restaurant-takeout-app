@@ -92,7 +92,6 @@ $(() => {
           itemInfo[currentItem] = {};
           itemInfo[currentItem].qty = checkoutItems[item].qty;
           itemInfo[currentItem].price = checkoutItems[item].price;
-
       }
       //calculate total cost from initial choices made in the menu page
       for (let item in itemInfo) {
@@ -100,6 +99,19 @@ $(() => {
       }
       $("#subtotalprice").text(`$${(subTotalPrice / 100).toFixed(2)}`);
       $("#totalprice").text(`$${((Math.round(subTotalPrice * 1.12)) / 100).toFixed(2)}`);
-      }
-  );
+
+
+      $("#place-order").click(function (event) {
+        event.preventDefault();
+        $.ajax({
+          method: 'POST',
+          url: '/confirmation',
+          data: { itemInfo, subTotalPrice }
+        })
+        .done(() => {
+          window.location.replace("/confirmation")
+        })
+      });
+
+    });
 });
