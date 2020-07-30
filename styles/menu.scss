@@ -1,35 +1,46 @@
+
 .menu {
   //background-image: url('../images/_coverpage_2.jpg');
+  scroll-behavior: smooth;
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
   background-attachment: fixed;
   margin-bottom: 0;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 90px;
-
   border-top: none;
   position: relative;
   margin: 0;
   -webkit-margin-before: 1.33em;
-  margin-top: 0;
-margin-bottom: 0;
-margin-left: auto;
-margin-right: auto;
+
 
 .user {
-  width: 300px;
-  height: 200px;
+  width: 80%;
+  height: 80%;
+  margin: 20px;
 }
-
-
 
 .menu_display {
   display: flex;
   justify-content: space-between;
+  width: 600px;
+  height: 400px;
+  margin: 0.5em;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-weight: 600;
 
 }
 
 .menu-info-and-button {
   display: flex;
+  justify-content: space-between;
+  background-size: 100%;
+  width: 600px;
+  height: 400px;
+  margin: 20px;
 }
 
 .menu_info {
@@ -37,11 +48,25 @@ margin-right: auto;
   flex-direction: column;
 }
 
-#all-buttons {
-  display: flex;
-  flex-direction: column;
-
+button {
+  background-color: #fb3;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: list-item;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 16px;
+  width: 180px;
+  height: 70px;
 }
+
+
+
+card-body {
+  display: inline;
+}
+
 
 #add {
   display: inline-block;
@@ -54,10 +79,17 @@ margin-right: auto;
 }
 
 .add-to-cart {
+  cursor: pointer;
   width: 90px;
   height: 50px;
-}
+  margin-left: 100px;
+  margin-top: 0;
 
+  &:hover {
+    border: 1px solid rgb(243, 214, 171);
+    text-decoration: none;
+  }
+}
 
 
 }
@@ -79,6 +111,15 @@ margin-right: auto;
     margin: 0 3rem;
   }
 }
+.item-name {
+  display: block;
+  font-size: 150%;
+  font-weight: 600;
+  margin-top: 5px;
+  color: #19553c;
+  text-decoration: underline;
+
+}
 
 .menu-list {
   list-style-type: none;
@@ -96,13 +137,15 @@ margin-right: auto;
 }
 
 .cart-button {
-  width: auto;
-  height: auto;
+  cursor: pointer;
+  width: 160px;
+  height: 70px;
   text-align: center;
-  font-size: 2vw;
+  font-size: 3vw;
   font-weight: 600;
   color:black;
-  margin: 4vh 2vw;
+  margin-top: 0;
+  margin-bottom: 0;
 
   &:hover {
     border: 1px solid rgb(243, 214, 171);
@@ -129,4 +172,6 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+
 }
+
