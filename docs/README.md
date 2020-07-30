@@ -30,8 +30,19 @@ Customers and Restaurant requirements converted to app features
 PSQL database tables design
 
 ## Final Product
-`ADD TEXT HERE
-!["ADD-TEXT"](ADDLINK)`
+
+  ### Main Page
+
+!["main-page"](https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/project-main-page.png)
+
+  ### Order Review and Checkout
+
+!["order-review-checkout"](https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/project-order-review-checkout.png)
+
+  ### Order Confirmation
+
+!["order-confirmation"](https://github.com/yuzhakova/restaurant-takeout-app/blob/master/public/images/project-order-confirmation.png)
+
 
 ## Dependencies
 - Node 10.x or above
