@@ -27,7 +27,7 @@ module.exports = (db) => {
   });
 
   router.get("/", (req, res) => {
-    console.log('222222222222222222222222222222', customerInfo)
+
     res.render("confirmation", { confirmedItems, prices, customerInfo });
     });
   return router;
