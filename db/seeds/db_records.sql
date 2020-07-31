@@ -8,16 +8,6 @@ populated 4 TABLES with:
 - ordered_items
 */
 
-INSERT INTO users (name, email, password, phone, role)
-  VALUES ('Natalia', 'natalia.yuzhakova@gmail.com', 'password', '+16048805245', 'customer'),
-  ('Natalia', 'natalia@gmail.com', 'password', '+16048805245', 'customer'),
-  ('Natalia', 'yuzhakova@gmail.com', 'password', '+16048805245', 'customer');
-
-INSERT INTO orders (user_id, order_time, wait_time, order_status, pickup_time, customer_notes)
-  VALUES ('1', '07/25/2020, 11:30 AM', 15, 'complete', '07/25/2020, 11:45 AM', 'extra dressing'),
-  ('2', '07/25/2020, 11:30 AM', 15, 'complete', '07/25/2020, 11:45 AM', 'extra dressing'),
-  ('3', '07/25/2020, 11:30 AM', 15, 'complete', '07/25/2020, 11:45 AM', 'extra dressing');
-
 INSERT INTO menu_items (name, thumbnail_url, price, description, category)
   VALUES ('Roasted Asparagus with Parmesan', 'https://raw.githubusercontent.com/yuzhakova/restaurant-takeout-app/master/public/images/1-main-asparagus.jpg', 899, 'Roasted asparagus with leafy greens sprinkled with parmesan.', 'main'),
           ('Buddha Bowl', 'https://raw.githubusercontent.com/yuzhakova/restaurant-takeout-app/master/public/images/1-main-buddha-bowl.jpg', 999, 'Macro and micronutrients all in one bowl.', 'main'),
@@ -31,8 +21,12 @@ INSERT INTO menu_items (name, thumbnail_url, price, description, category)
           ('Fruit Plate', 'https://raw.githubusercontent.com/yuzhakova/restaurant-takeout-app/master/public/images/3-dessert-fruit.jpg', 499, 'Can never go wrong with fresh fruit and berry seasonal selection.', 'dessert'),
           ('Lemon Square', 'https://raw.githubusercontent.com/yuzhakova/restaurant-takeout-app/master/public/images/3-dessert-lemon-square.jpg', 399, 'Zesty lemon bar handcrafted by our pastry chef.', 'dessert');
 
-INSERT INTO ordered_items (order_id, menu_item_id, qty)
-  VALUES (1, 1, 2),
-          (2, 2, 2),
-          (3, 3, 2);
+INSERT INTO orders (name, phone, customer_notes)
+  VALUES ('Sandy', '6048805245', 'extra dressing'),
+  ('Sandy', '6048805245', 'extra dressing'),
+  ('Sandy', '6048805245', 'no cutlery');
 
+INSERT INTO ordered_items (order_id, menu_item_id, menu_item_name, qty)
+  VALUES (2, 2, 'Buddha Bowl', 2),
+          (2, 4,'Shiitake Tagliatelle', 2),
+          (3, 9, 'Cheesecake', 2);
