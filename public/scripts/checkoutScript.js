@@ -62,9 +62,9 @@ $(() => {
           <figcaption class="info align-self-center">
             <p class="title">${item.name}<br></p> <span class="text-muted">$${(item.price / 100)}</span>
 
-            <input type="button" value="-" class="dec"/>
-            <label class="display" data-product-id="${item.name}" id="${item.name}">${item.qty}</label>
             <input type="button" value="+" class="inc"/>
+            <label class="display" data-product-id="${item.name}" id="${item.name}">${item.qty}</label>
+            <input type="button" value="-" class="dec"/>
 
 
           </figcaption>
@@ -85,6 +85,7 @@ $(() => {
     .done(res => {
       // Adding items to .ejs file.
       let checkoutItems = res.menuItems;
+      console.log('FFFFFFFFFFFFFFFFFF', checkoutItems)
       for (let item in checkoutItems) {
         const $checkoutItem = createCheckoutItemElement(checkoutItems[item]);
           $('#items_selected').append($checkoutItem);
@@ -92,6 +93,7 @@ $(() => {
           itemInfo[currentItem] = {};
           itemInfo[currentItem].qty = checkoutItems[item].qty;
           itemInfo[currentItem].price = checkoutItems[item].price;
+          itemInfo[currentItem].image = checkoutItems[item].image;
       }
       //calculate total cost from initial choices made in the menu page
       for (let item in itemInfo) {
@@ -103,14 +105,21 @@ $(() => {
 
       $("#place-order").click(function (event) {
         event.preventDefault();
-        $.ajax({
+        let customerName = $('#pickUpName').val()
+        let customerPhone = Number($('#phone').val())
+        let customerNotes = $('#customerNotes').val()
+        if ($('#pickUpName').val().length === 0  || $('#phone').val().length == 0) {
+          alert("Please fill out Name and Phone number.")
+        } else {
+          $.ajax({
           method: 'POST',
           url: '/confirmation',
-          data: { itemInfo, subTotalPrice }
-        })
-        .done(() => {
+          data: { itemInfo, subTotalPrice, customerName, customerPhone, customerNotes }
+          })
+          .done(() => {
           window.location.replace("/confirmation")
-        })
+          })
+        }
       });
 
     });

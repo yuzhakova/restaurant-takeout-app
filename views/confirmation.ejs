@@ -13,30 +13,31 @@
     <%- include('partials/_header') %>
     <div class="container">
       <article class="card">
-        <header class="card-header"> <strong>Your order is placed!</header>
+        <header class="card-header"> <strong>Your order is placed! You will shortly receive an SMS at <%= customerInfo.phone %> message with the pick-up time.</strong></header>
         <div class="card-body">
           <article class="card">
-            <div class="card-body row">
-              <div class="col"> <strong>You will receive : </strong></div>
+            <div class="card-body column">
+              <div class="col"> <strong><%= customerInfo.name %>'s order contains: </strong></div>
             </div>
           </article>
           <hr>
-          <ul class="row">
+          <ul class="column">
             <% for (let item in confirmedItems) { %>
             <li class="col-md-4">
               <figure class="itemside mb-3">
-                <div class="aside"><img src="https://raw.githubusercontent.com/yuzhakova/restaurant-takeout-app/master/public/images/1-main-buddha-bowl.jpg" class="img-sm border"></div>
+                <div class="aside"><img src="<%= confirmedItems[item].image %>" class="img-sm border"></div>
                 <figcaption class="info align-self-center">
-                  <p class="title"><%= item %><br> qty: <%= confirmedItems[item] %></p>
+                  <p class="title"><%= item %><br> qty: <%= confirmedItems[item].qty %></p>
                 </figcaption>
               </figure>
             </li>
             <% } %>
+            <p><strong>Customer Notes:</strong> <%= customerInfo.notes %></p>
           </ul>
           <hr>
           <article class="card">
-            <div class="card-body row">
-              <div class="col">Subtotal: $30.96 Tax: $1.54<br><strong>Total:$32.60</strong> </div>
+            <div class="card-body column">
+              <div class="col">Subtotal: $<%= prices.subTotPrice %><br><strong>Total:$<%= prices.totPrice %></strong> </div>
             </div>
           </article>
         </div>
