@@ -38,6 +38,15 @@ module.exports = (db) => {
   });
 
   router.get("/", (req, res) => {
+
+    db.query(`INSERT INTO orders (name, phone, customer_notes)
+              VALUES ('${customerInfo.name}', '${customerInfo.phone}', '${customerInfo.notes}');`)
+
+    for (let item in confirmedItems) {
+      db.query(`INSERT INTO ordered_items (order_id, menu_item_id,  menu_item_name, qty)
+      VALUES (orders.id, 2, '${confirmedItems[item].id}', ${confirmedItems  [item].qty});`)
+    };
+
     if (totalQuantity > 3) {
       waitTime = totalQuantity * 6;
     } else {
