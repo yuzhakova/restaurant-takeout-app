@@ -10,6 +10,19 @@ const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
 
+
+//twilio set up - inbound sms
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
+//twilio set up - outbound sms
+
+const accountSid = 'ACdaab8cf6fda53affb3d835ce9bf89163';
+const authToken = '7bc370df179ce5ec00ad781031f2dabf';
+// const accountSid = process.env.TWILIO_ACCOUNT_SID;
+// const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+
+
+
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
@@ -57,3 +70,58 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+
+//twilio setup
+app.post("/confirmation", (req, res) => {
+  console.log(req.body);
+  client.messages
+    .create({
+      body: 'Your FEED-ly order will be ready in 20 minutes.',
+      from: '19388008322',
+      to: '16048805245'
+    }).then((message) => {
+      console.log(message.sid)
+    })
+  .then(() => res.redirect('confirmation'), { orderdata: req.body });
+});
+
+app.post("/placeyourorder", (req, res) => {
+  res.redirect('confirmation');
+});
+
+
+
+//
+
+// //twilio set up - this is for inbound sms
+// POST request comes from twilio whenever a response is received via SMS (via ngrok)
+app.post('/sms', (req, res) => {
+  const twiml = new MessagingResponse();
+
+  twiml.message(`add message`);
+  // 1: get access to the database
+  // 2: find the correct order from the message based on the time the message was sent
+  // 3: update the order_id on the table row for the given order
+  // 4: get the owner of the order via the database (based on step 2)
+  // 5: use client.messages.create to send a confirmation message to the owner of the order
+  db.query(`INSERT INTO orders`, mesesage.sid); // update the message_id to message.sid
+
+  res.writeHead(200, {'Content-Type': 'text/xml'});
+  // const reply = function () {
+  //   client.messages
+  //     .create({
+  //       body: 'Your FEED-ly order order is ready.',
+  //       from: '16048805245',
+  //       to: '16048805245'
+  //     })
+  // }
+
+  // setTimeout(reply, 5000);
+
+  // res.writeHead(200, { 'Content-Type': 'text/xml' });
+  res.end(twiml.toString());
+});
+  // http.createServer(app).listen(1337, () => {
+    // console.log('Exress server is listening on port 1337')
+  // });
