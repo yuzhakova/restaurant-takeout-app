@@ -22,7 +22,7 @@ const notifySMS = twilioSMSAPI();
 
 const notifyOwner = (id = 1234, phoneNumber = "+16048805245") => {
   const options = {
-    text: `New Order #${id} is placed. Login to your website for confirmation.`,
+    text: `New Order is placed`,
     phoneNumber: phoneNumber,
   };
   // notifySMS(options);
