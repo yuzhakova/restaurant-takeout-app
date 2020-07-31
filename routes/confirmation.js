@@ -6,6 +6,11 @@ module.exports = (db) => {
   let confirmedItems = {};
   let prices = {};
   let customerInfo = {};
+  let today = new Date();
+  let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  let time = today.getHours() + ":" + today.getMinutes();
+  let dateTime = date+' '+time;
+
 
   router.post("/", (req, res) => {      // JSON-only route for AJAX POST
     let selectedMenuItem = req.body;
@@ -27,7 +32,7 @@ module.exports = (db) => {
   });
 
   router.get("/", (req, res) => {
-
+    console.log('rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr', dateTime)
     res.render("confirmation", { confirmedItems, prices, customerInfo });
     });
   return router;
