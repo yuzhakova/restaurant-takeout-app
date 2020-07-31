@@ -16,7 +16,7 @@ const MessagingResponse = require('twilio').twiml.MessagingResponse;
 //twilio set up - outbound sms
 
 const accountSid = 'ACdaab8cf6fda53affb3d835ce9bf89163';
-const authToken = '7bc370df179ce5ec00ad781031f2dabf';
+const authToken = 'new';
 // const accountSid = process.env.TWILIO_ACCOUNT_SID;
 // const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
