@@ -23,14 +23,16 @@
           <hr>
           <ul class="column">
             <% for (let item in confirmedItems) { %>
-            <li class="col-md-4">
-              <figure class="itemside mb-3">
-                <div class="aside"><img src="<%= confirmedItems[item].image %>" class="img-sm border"></div>
-                <figcaption class="info align-self-center">
-                  <p class="title"><%= item %><br> qty: <%= confirmedItems[item].qty %></p>
-                </figcaption>
-              </figure>
-            </li>
+              <% if (confirmedItems[item].qty > 0) { %>
+              <li class="col-md-4">
+                <figure class="itemside mb-3">
+                  <div class="aside"><img src="<%= confirmedItems[item].image %>" class="img-sm border"></div>
+                  <figcaption class="info align-self-center">
+                    <p class="title"><%= item %><br> qty: <%= confirmedItems[item].qty %></p>
+                  </figcaption>
+                </figure>
+              </li>
+              <%} %>
             <% } %>
             <p><strong>Customer Notes:</strong> <%= customerInfo.notes %></p>
           </ul>
