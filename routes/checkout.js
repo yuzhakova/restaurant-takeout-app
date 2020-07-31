@@ -10,6 +10,7 @@ module.exports = (db) => {
   let selectedMenuItem = req.body;
     const item_id = selectedMenuItem.item_id;
     menuItems[item_id] = {};
+    menuItems[item_id].id = selectedMenuItem.item_id;
     menuItems[item_id].name = selectedMenuItem.name;
     menuItems[item_id].price = selectedMenuItem.price;
     menuItems[item_id].qty = selectedMenuItem.qty;
@@ -25,7 +26,7 @@ module.exports = (db) => {
   });
 
   router.get("/1", (req, res) => {        // JSON-only route for AJAX GET
-      res.json({ menuItems })
+    res.json({ menuItems })
   })
 
   return router;

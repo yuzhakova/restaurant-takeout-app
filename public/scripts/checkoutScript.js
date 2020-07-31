@@ -85,12 +85,12 @@ $(() => {
     .done(res => {
       // Adding items to .ejs file.
       let checkoutItems = res.menuItems;
-      console.log('FFFFFFFFFFFFFFFFFF', checkoutItems)
       for (let item in checkoutItems) {
         const $checkoutItem = createCheckoutItemElement(checkoutItems[item]);
           $('#items_selected').append($checkoutItem);
           let currentItem = checkoutItems[item].name
           itemInfo[currentItem] = {};
+          itemInfo[currentItem].id = checkoutItems[item].id;
           itemInfo[currentItem].qty = checkoutItems[item].qty;
           itemInfo[currentItem].price = checkoutItems[item].price;
           itemInfo[currentItem].image = checkoutItems[item].image;
